@@ -17,13 +17,17 @@ def test_open_login():
     print(driver.current_url)
 
 #assert
-    assert driver.current_url == ""
+    assert driver.current_url == "https://katalon-demo-cura.herokuapp.com/profile.php#login"
 
     username = driver.find_element(By.NAME,'username')
     username.send_keys("John")
 
-    password = driver.find_element(By.ID, 'password')
+    password = driver.find_element(By.ID, 'txt-password')
     password.send_keys("ThisIsNotPassword")
 
     submit_btn = driver.find_element(By.ID, 'btn-login')
     submit_btn.click()
+
+    time.sleep(20)
+
+    driver.quit()

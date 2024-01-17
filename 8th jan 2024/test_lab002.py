@@ -9,11 +9,16 @@ from selenium.webdriver.common.by import By
 
 def test_open_login():
     driver = webdriver.Chrome()
-    driver.get("https://katalon-demo-cura.herokuapp.com/")
+    driver.get("https://www.idrive360.com/enterprise/login")
+    #relative xpath
+    rel_xpath_email = driver.find_element(By.XPATH,"//input[@type='email']")
+    rel_xpath_email.send_keys("admin@idrive.com")
 
-    make_appointment_btn = driver.find_element(By.ID, 'btn-make-appointment')
-    make_appointment_btn.click()
 
-    print(driver.current_url)
+
+
+
 
     time.sleep(20)
+
+    driver.quit()
